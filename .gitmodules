@@ -1,0 +1,3 @@
+[submodule "telepathy-rakia"]
+	path = telepathy-rakia
+	url = http://anongit.freedesktop.org/git/telepathy/telepathy-rakia.git
