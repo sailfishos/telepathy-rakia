@@ -1,0 +1,7 @@
+* Fri Apr 19 2013 Reto Zingg <reto.zingg@jollamobile.com> - 0.7.4
+- add -tests package
+- add -devel package
+
+* Mon Jul 30 2012 Marko Saukko <marko.saukko@jollamobile.com> - 0.7.4
+- Initial packaging for nemo.
+

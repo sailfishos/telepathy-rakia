@@ -1,0 +1,56 @@
+diff -Naur telepathy-rakia-0.7.4/tests/twisted/Makefile.am telepathy-rakia-0.7.4-nemo-testing/tests/twisted/Makefile.am
+--- telepathy-rakia-0.7.4/tests/twisted/Makefile.am	2012-05-08 16:51:51.000000000 +0000
++++ telepathy-rakia-0.7.4-nemo-testing/tests/twisted/Makefile.am	2013-04-19 11:55:30.647538468 +0000
+@@ -17,6 +17,15 @@
+ 	voip/add-remove-content.py \
+ 	$(NULL)
+ 
++nemotestsdir = /opt/tests/telepathy-rakia/
++nemotestsbindir = /opt/tests/telepathy-rakia/bin/
++nobase_nodist_nemotests_DATA = rakia-twisted-tests.list
++nobase_nodist_nemotestsbin_SCRIPTS = $(TWISTED_TESTS)
++nobase_nodist_nemotestsbin_DATA = constants.py servicetest.py sofiatest.py voip/voip_test.py config.py
++
++rakia-twisted-tests.list:
++	$(AM_V_GEN)echo $(TWISTED_TESTS) > $@
++
+ TESTS =
+ 
+ TESTS_ENVIRONMENT = \
+diff -Naur telepathy-rakia-0.7.4/tests/twisted/config.py telepathy-rakia-0.7.4-nemo-testing/tests/twisted/config.py
+--- telepathy-rakia-0.7.4/tests/twisted/config.py	1970-01-01 00:00:00.000000000 +0000
++++ telepathy-rakia-0.7.4-nemo-testing/tests/twisted/config.py	2013-04-19 11:54:36.139533386 +0000
+@@ -0,0 +1 @@
++DEBUGGING = True
+diff -Naur telepathy-rakia-0.7.4/tests/twisted/tools/Makefile.am telepathy-rakia-0.7.4-nemo-testing/tests/twisted/tools/Makefile.am
+--- telepathy-rakia-0.7.4/tests/twisted/tools/Makefile.am	2012-05-08 16:51:51.000000000 +0000
++++ telepathy-rakia-0.7.4-nemo-testing/tests/twisted/tools/Makefile.am	2013-04-19 11:56:53.266546367 +0000
+@@ -31,3 +31,8 @@
+ CLEANFILES = \
+     $(BUILT_SOURCES) \
+     rakia-testing.log
++
++nemoteststoolsdir = /opt/tests/telepathy-rakia/bin/tools/
++nobase_nodist_nemoteststools_SCRIPTS = with-session-bus.sh
++nobase_nodist_nemoteststools_DATA = $(conf_files) $(service_files)
++
+diff -Naur telepathy-rakia-0.7.4/tests/twisted/tools/sofiasip.service.in telepathy-rakia-0.7.4-nemo-testing/tests/twisted/tools/sofiasip.service.in
+--- telepathy-rakia-0.7.4/tests/twisted/tools/sofiasip.service.in	2012-02-25 01:11:03.000000000 +0000
++++ telepathy-rakia-0.7.4-nemo-testing/tests/twisted/tools/sofiasip.service.in	2013-04-19 11:56:29.871544106 +0000
+@@ -1,3 +1,3 @@
+ [D-BUS Service]
+ Name=org.freedesktop.Telepathy.ConnectionManager.sofiasip
+-Exec=@abs_top_builddir@/tests/twisted/tools/exec-with-log.sh
++Exec=/usr/libexec/telepathy-rakia
+diff -Naur telepathy-rakia-0.7.4/tests/twisted/tools/tmp-session-bus.conf.in telepathy-rakia-0.7.4-nemo-testing/tests/twisted/tools/tmp-session-bus.conf.in
+--- telepathy-rakia-0.7.4/tests/twisted/tools/tmp-session-bus.conf.in	2012-02-25 01:11:03.000000000 +0000
++++ telepathy-rakia-0.7.4-nemo-testing/tests/twisted/tools/tmp-session-bus.conf.in	2013-04-19 11:56:05.427541765 +0000
+@@ -10,7 +10,7 @@
+ 
+   <listen>unix:tmpdir=/tmp</listen>
+ 
+-  <servicedir>@abs_top_builddir@/tests/twisted/tools</servicedir>
++  <servicedir>/opt/tests/telepathy-rakia/bin/tools</servicedir>
+ 
+   <policy context="default">
+     <!-- Allow everything to be sent -->
