@@ -16,8 +16,6 @@ Description: |
     %{name} is a SIP connection manager for the Telepathy
     framework based on the SofiaSIP-stack.
 
-Requires:
-    - telepathy-filesystem
 PkgConfigBR:
     - gobject-2.0 >= 2.30
     - dbus-1

@@ -20,7 +20,6 @@ Source2:    mktests.sh
 Source100:  telepathy-rakia.yaml
 Patch0:     0001-Check-for-gio-to-avoid-linking-issue.patch
 Patch1:     0002-nemo-test-install.patch
-Requires:   telepathy-filesystem
 BuildRequires:  pkgconfig(gobject-2.0) >= 2.30
 BuildRequires:  pkgconfig(dbus-1)
 BuildRequires:  pkgconfig(dbus-glib-1)
