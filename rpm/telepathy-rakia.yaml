@@ -46,6 +46,7 @@ SubPackages:
       Requires:
           - python-twisted
           - dbus-python
+          - pygobject2
       Files:
           - /opt/tests/%{name}/*
 
