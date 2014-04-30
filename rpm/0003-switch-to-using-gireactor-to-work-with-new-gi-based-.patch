@@ -1,0 +1,30 @@
+From 4ed182b856a685d128509f2870177cf07099a6f4 Mon Sep 17 00:00:00 2001
+From: Matti Kosola <matti.kosola@jollamobile.com>
+Date: Wed, 30 Apr 2014 10:27:18 +0300
+Subject: [PATCH] [tests] switch to using gireactor to work with new gi based
+ pygobject2
+
+Signed-off-by: Matti Kosola <matti.kosola@jollamobile.com>
+---
+ tests/twisted/servicetest.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/tests/twisted/servicetest.py b/tests/twisted/servicetest.py
+index c464d8f..5e6fb94 100644
+--- a/tests/twisted/servicetest.py
++++ b/tests/twisted/servicetest.py
+@@ -20,9 +20,9 @@
+ Infrastructure code for testing Telepathy services.
+ """
+ 
+-from twisted.internet import glib2reactor
++from twisted.internet import gireactor
+ from twisted.internet.protocol import Protocol, Factory, ClientFactory
+-glib2reactor.install()
++gireactor.install()
+ import sys
+ import time
+ import os
+-- 
+1.8.3.2
+
