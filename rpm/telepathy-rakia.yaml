@@ -12,6 +12,7 @@ Sources:
 Patches:
     - 0001-Check-for-gio-to-avoid-linking-issue.patch
     - 0002-nemo-test-install.patch
+    - 0003-switch-to-using-gireactor-to-work-with-new-gi-based-.patch
 Description: |
     %{name} is a SIP connection manager for the Telepathy
     framework based on the SofiaSIP-stack.
