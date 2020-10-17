@@ -14,9 +14,9 @@ diff -Naur telepathy-rakia-0.7.4/tests/twisted/Makefile.am telepathy-rakia-0.7.4
 +rakia-twisted-tests.list:
 +	$(AM_V_GEN)echo $(TWISTED_TESTS) > $@
 +
- TESTS =
- 
- TESTS_ENVIRONMENT = \
+ check-local: check-coding-style check-twisted
+
+ CHECK_TWISTED_SLEEP=0
 diff -Naur telepathy-rakia-0.7.4/tests/twisted/config.py telepathy-rakia-0.7.4-nemo-testing/tests/twisted/config.py
 --- telepathy-rakia-0.7.4/tests/twisted/config.py	1970-01-01 00:00:00.000000000 +0000
 +++ telepathy-rakia-0.7.4-nemo-testing/tests/twisted/config.py	2013-04-19 11:54:36.139533386 +0000
